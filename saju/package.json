@@ -1,0 +1,83 @@
+{
+  "name": "saju",
+  "version": "1.0.0",
+  "description": "etoos-event-template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt --open",
+    "serve": "nuxt --open",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "lint": "eslint --ext \".js,.vue\" --ignore-path .gitignore",
+    "run:json-server": "json-server --watch fake-server/db.json --port 3001",
+    "run:backend-server": "npm run dev --prefix back-end",
+    "test": "jest --watchAll"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/preset-env": "^7.14.7",
+    "@nuxtjs/axios": "^5.13.6",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "@nuxtjs/universal-storage": "^0.5.9",
+    "@vue/server-test-utils": "^1.2.1",
+    "@vue/test-utils": "^1.2.2",
+    "axios": "^0.21.1",
+    "babel-jest": "^27.0.6",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-vue": "^7.16.0",
+    "jest": "^27.0.6",
+    "jest-vue-preprocessor": "^1.7.1",
+    "json-server": "^0.16.3",
+    "node-sass": "^6.0.1",
+    "npm-run-all": "^4.1.5",
+    "nuxt": "^2.15.7",
+    "prettier": "^2.3.2",
+    "sass": "^1.35.2",
+    "sass-loader": "^10.2.0",
+    "style-loader": "^2.0.0",
+    "swiper": "^5.4.5",
+    "typescript": "^4.3.5",
+    "vue": "^2.6.14",
+    "vue-awesome-swiper": "^4.1.1"
+  },
+  "jest": {
+    "globalSetup": "<rootDir>/jest.setup.js",
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    },
+    "moduleNameMapper": {
+      "^vue$": "vue/dist/vue.common.js",
+      "^~/(.*)$": "<rootDir>/$1"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/components/**/*.{js, vue}",
+      "**/server/utils/*.{js}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "text-summary"
+    ],
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "lodash": "^4.17.21",
+    "net": "^1.0.2",
+    "tls": "^0.0.1"
+  }
+}
