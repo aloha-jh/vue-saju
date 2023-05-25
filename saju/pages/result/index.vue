@@ -1,19 +1,20 @@
 <template>
   <div class="result">123
-    {{ user }}
+     {{ user }}
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
+ 
 export default {
     computed:{
-        user(){
-            return this.$store.state.result.user;
-        }
+        ...mapState(['user'])
     }
+    
 }
 </script>
 
-<style>
-
+<style lang="scss">   
 </style>
