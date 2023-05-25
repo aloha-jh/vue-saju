@@ -12,7 +12,8 @@
     "run:json-server": "json-server --watch fake-server/db.json --port 3001",
     "run:backend-server": "npm run dev --prefix back-end",
     "test": "jest --watchAll",
-    "generate":"nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "author": "",
   "license": "ISC",
@@ -81,6 +82,7 @@
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "net": "^1.0.2",
+    "push-dir": "^0.4.1",
     "tls": "^0.0.1"
   }
 }
