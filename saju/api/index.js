@@ -1,7 +1,7 @@
 const axios = require('axios');  
 
 export const fetchData = ( data ) =>{
-  const url = '/B090041/openapi/service/LrsrCldInfoService/getLunCalInfo';
+  const url = 'https://apis.data.go.kr/B090041/openapi/service/LrsrCldInfoService/getLunCalInfo';
   
   const queryParams = {
     serviceKey: process.env.SERVICE_KEY,
