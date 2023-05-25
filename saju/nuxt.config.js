@@ -8,6 +8,10 @@ export default {
         base:'/vue-saju/'
     },
     modules: ['@nuxtjs/axios', '@nuxtjs/universal-storage','@nuxtjs/dotenv'],
+    axios:{
+        baseURL:'https://apis.data.go.kr',
+        https:true,
+    },
     css: ['~/assets/scss/ets_common.scss'],
     head: {
         title: '사주',
