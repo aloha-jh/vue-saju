@@ -11,6 +11,9 @@ export default {
     axios:{
         baseURL:'https://apis.data.go.kr',
         https:true,
+        headers: {
+            'Permissions-Policy': 'interest-cohort=()', // interest-cohort 활성화
+          },
     },
     css: ['~/assets/scss/ets_common.scss'],
     head: {
