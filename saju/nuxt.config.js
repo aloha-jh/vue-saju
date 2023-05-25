@@ -2,8 +2,11 @@ require('dotenv').config();
 export default {
     ssr:true,
     loading: false,
-    target:'server',
+    target:'static', //server
     mode: 'universal',
+    router:{
+        base:'/vue-saju/'
+    },
     modules: ['@nuxtjs/axios', '@nuxtjs/universal-storage','@nuxtjs/dotenv'],
     css: ['~/assets/scss/ets_common.scss'],
     head: {
@@ -22,6 +25,7 @@ export default {
         hotMiddleware: {
             client: { overlay: false },
         },
+        dir:'dist',
         analyze: false,
         extend(config, { isClient, isServer, isDev }) {
             if (isServer && !isDev) {
