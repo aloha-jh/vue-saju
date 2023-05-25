@@ -1,9 +1,14 @@
 <template>
-  <div class="result">123
-     {{ user }}
+  <div class="result">
+      <p>{{ user.lunSecha }}</p>
+      <p>{{ user.lunWolgeon}}</p>
+      <p>{{ user.lunIljin }}</p>
+    {{ user }}
   </div>
 </template>
 
+
+ 
 <script>
 import { mapState } from 'vuex';
 

@@ -34,10 +34,10 @@ export default{
   data(){
     return{
       useryear:'',
-      usermonth:'09',
-      userday:'20',
-      userhour:'13',
-      usermin:'05',
+      usermonth:'',
+      userday:'',
+      userhour:'00',
+      usermin:'00',
     }
   },
   methods:{
