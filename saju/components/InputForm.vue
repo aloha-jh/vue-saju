@@ -29,33 +29,33 @@
 </template>
 
 <script>
-import fetchData from '../api/index'
+import { mapActions } from 'vuex';
 export default{
   data(){
     return{
-      useryear:'1993',
-      usermonth:'9',
+      useryear:'',
+      usermonth:'09',
       userday:'20',
       userhour:'13',
       usermin:'05',
     }
   },
   methods:{
-    submit(){
-      fetchData(this.useryear, this.usermonth, this.day)
-      .then(res=>{
-        this.$router.push('/result')
-      })
-      .catch(err=>{
-        console.log(err);
-      })
+    ...mapActions(['reqUser']),
+    async submit(){
+      const data = {
+        year: this.useryear,
+        month: this.usermonth,
+        day: this.userday,
+      };
+      const user = await this.reqUser(data);
+      this.$router.push('/result');
     } 
       
   } 
 }
 </script>
 
-<style lang="scss">
-@import '../assets/scss/page/_info.scss'
+<style lang="scss"> 
 
 </style>
