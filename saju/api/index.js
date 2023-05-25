@@ -1,17 +1,21 @@
-const axios = require('axios');
+const axios = require('axios'); 
 
-
-const fetchData = () =>{
+const fetchData = ( year,month,day ) =>{
   const url = 'http://apis.data.go.kr/B090041/openapi/service/LrsrCldInfoService/getLunCalInfo';
+
+  console.log('test') 
+  
   const queryParams = {
-    serviceKey: '/GfC1zu/wLBMmBPEC+3HWoQaMKClQ1/RNHODl8Q4UxzUQernn7owtJUpbJ9pdtf/5Aj43Ts+IBP0DfzSfzq3DA==', // Service Key
-    solYear: '1993',
-    solMonth: '09',
-    solDay: '20'
+    serviceKey: process.env.SERVICE_KEY,
+    solYear: year ,//'1993'
+    solMonth: month ,//09
+    solDay: day
   };
 
   return axios.get(url, { params: queryParams })
-  .then(res=>res.data)
+  .then(res=>{
+    this.$store.commit('result/SET_USER', res.data)
+  })
   .catch(function (error) {
     console.log(error);
   });

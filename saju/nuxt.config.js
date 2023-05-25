@@ -1,9 +1,10 @@
+require('dotenv').config();
 export default {
     ssr:true,
     loading: false,
     target:'server',
     mode: 'universal',
-    modules: ['@nuxtjs/axios', '@nuxtjs/universal-storage'],
+    modules: ['@nuxtjs/axios', '@nuxtjs/universal-storage','@nuxtjs/dotenv'],
     css: ['~/assets/scss/ets_common.scss'],
     head: {
         title: '사주',

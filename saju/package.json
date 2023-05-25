@@ -27,6 +27,7 @@
     "axios": "^0.21.1",
     "babel-jest": "^27.0.6",
     "babel-preset-env": "^1.7.0",
+    "dotenv": "^16.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-nuxt": "^2.0.0",
@@ -75,6 +76,7 @@
     "testEnvironment": "jsdom"
   },
   "dependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "net": "^1.0.2",

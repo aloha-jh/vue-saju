@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="index">
         <input-form></input-form>
         <button @click="getData"> OK </button> 
         <div>{{ data }}</div>
@@ -39,7 +39,7 @@ export default {
                 this.year= body.lunSecha;
                 this.month=body.lunWolgeon;
                 this.day=body.lunIljin;
-                const time = '13:05'; 
+                const time = '13:11'; 
                 this.timeList = getSiju(body.lunIljin[0],time);
             })
             .catch(error=>{
@@ -49,4 +49,5 @@ export default {
     }
 }
 </script>
-<style></style>
+<style lang="scss"> 
+</style>
