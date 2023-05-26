@@ -17,13 +17,15 @@ export default {
     },
     css: ['~/assets/scss/ets_common.scss'],
     head: {
-        title: '사주',
+        title: '운정원',
         meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '' }],
         link: [
             {
-                rel: 'icon',
-                type: 'image/x-icon',
-                href: 'https://img.etoos.com/teacher/event/2018/04/pmo_00/favicon.ico',
+                rel: 'icon',type: 'image/x-icon', src: '/favicon.ico',
+                rel: 'icon',type: 'image/x-icon', src: '/favicon-32.png',
+                rel: 'icon',type: 'image/x-icon', src: '/favicon-57.png',
+                rel: 'icon',type: 'image/x-icon', src: '/favicon-60.png',
+                rel: 'icon',type: 'image/x-icon', src: '/favicon-72.png',
             }, 
             {
                 rel: 'stylesheet',

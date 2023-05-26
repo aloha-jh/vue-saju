@@ -12,13 +12,15 @@
         <h3>생년월일(양력)</h3>
         <p class="birth"> 
           <input v-model="userbirth" :placeholder="birthHolderTxt" type="number" 
+          inputmode="numeric"
           maxlength="8"/>
         </p>
       </li>
       <li>        
         <h3>출생시</h3>
         <p class="time">
-          <input v-model="usertime" placeholder="1420" type="number" 
+          <input v-model="usertime" placeholder="1420" type="number"
+          inputmode="numeric"
           maxlength="4"/> 
           <button @click="timeNo" :class="{active:usertime==''}" class="btn-si">시모름</button>
         </p>
@@ -58,14 +60,14 @@ export default{
   methods:{
     ...mapActions(['reqUser']),
     async submit(){
-      if( this.usertime.length==4){
+      if( this.usertime.length==4 ){
         this.inValidTime(this.usertime)
       }
       else{
         this.inValidTime=''
-      }
+        this.timeHolderTxt='잘못된 시간형식'
+      } 
       if( this.inValidDate( this.userbirth )){
-  
         const data = {
           year: this.userbirth.slice(0, 4),
           month: this.userbirth.slice(4, 6),
