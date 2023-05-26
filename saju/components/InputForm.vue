@@ -3,28 +3,28 @@
     <ul>
       <li>
         <h3>성별</h3>
-        <p>
-          <input placeholder="남" readonly/>
-          <input placeholder="여" readonly/>
+        <p class="gender-wrap">
+          <button @click="toggleGender" :class="{active:gender}">남</button>
+          <button @click="toggleGender" :class="{active:!gender}">여</button>
         </p>
       </li>
       <li>
         <h3>생년월일(양력)</h3>
-        <p class="birth">
-          <input placeholder="년" type="number" v-model="useryear" />
-          <input placeholder="월" type="number" v-model="usermonth" />
-          <input placeholder="일" type="number" v-model="userday" />
+        <p class="birth"> 
+          <input v-model="userbirth" :placeholder="birthHolderTxt" type="number" 
+          maxlength="8"/>
         </p>
       </li>
       <li>        
+        <h3>출생시</h3>
         <p class="time">
-          <input placeholder="시" type="number" v-model="userhour"/>
-          <input placeholder="분" type="number" v-model="usermin"/>
-          <input class="btn-si" readonly placeholder="출생시모름"/>
+          <input v-model="usertime" placeholder="1420" type="number" 
+          maxlength="4"/> 
+          <button @click="timeNo" :class="{active:usertime==''}" class="btn-si">시모름</button>
         </p>
       </li>
     </ul>
-    <button @click="submit">확인</button>
+    <button :class="{active:birthCheck==true}" @click="submit">확인</button>
   </div>
 </template>
 
@@ -33,25 +33,76 @@ import { mapActions } from 'vuex';
 export default{
   data(){
     return{
-      useryear:'',
-      usermonth:'',
-      userday:'',
-      userhour:'00',
-      usermin:'00',
+      gender:true,  
+      userbirth:'19930920',
+      usertime:'',
+      birthCheck:false,
+      birthHolderTxt:'19930101',
+    }
+  },
+  watch:{
+    userbirth( value ){
+      if(value.length>=8){
+        this.userbirth = value.slice(0,8);
+        this.birthCheck=true;
+      }else{
+        this.birthCheck=false;
+      }
+    },
+    usertime(value){
+      if(value.length>4){
+        this.usertime = value.slice(0,4);
+      }
     }
   },
   methods:{
     ...mapActions(['reqUser']),
     async submit(){
-      const data = {
-        year: this.useryear,
-        month: this.usermonth,
-        day: this.userday,
-      };
-      const user = await this.reqUser(data);
-      this.$router.push('/result');
-    } 
-      
+      if( this.usertime.length==4){
+        this.inValidTime(this.usertime)
+      }
+      else{
+        this.inValidTime=''
+      }
+      if( this.inValidDate( this.userbirth )){
+  
+        const data = {
+          year: this.userbirth.slice(0, 4),
+          month: this.userbirth.slice(4, 6),
+          day: this.userbirth.slice(6, 8)
+        };
+        const user = await this.reqUser(data);
+        this.$router.push('/result');
+      }else{
+        this.userbirth='';
+        this.birthHolderTxt='잘못된 생년월일 형식'; 
+      }
+    },
+    toggleGender() {
+      this.gender = !this.gender;
+    }, 
+    timeNo(){
+      this.usertime='';
+    },     
+    inValidDate( userbirth ){
+      const year = userbirth.slice(0, 4);
+      const month = userbirth.slice(4, 6);
+      const day = userbirth.slice(6, 8);
+
+      const date = new Date(year, month - 1, day);
+      return (
+        date.getFullYear() === Number(year) &&
+        date.getMonth() === Number(month) - 1 &&
+        date.getDate() === Number(day)
+      );
+    },
+    inValidTime(usertime){
+        const hours = usertime.slice(0, 2);
+        const minutes = usertime.slice(2, 4);        
+        const isValidHours = hours >= 0 && hours < 24;
+        const isValidMinutes = minutes >= 0 && minutes < 60;
+        return isValidHours && isValidMinutes;       
+    }
   } 
 }
 </script>

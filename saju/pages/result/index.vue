@@ -1,5 +1,5 @@
 <template>
-  <div class="result">
+  <div class="result" v-if="user!=null">
       <p>{{ user.lunSecha }}</p>
       <p>{{ user.lunWolgeon}}</p>
       <p>{{ user.lunIljin }}</p>

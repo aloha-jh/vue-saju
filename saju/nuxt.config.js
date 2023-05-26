@@ -24,7 +24,11 @@ export default {
                 rel: 'icon',
                 type: 'image/x-icon',
                 href: 'https://img.etoos.com/teacher/event/2018/04/pmo_00/favicon.ico',
-            },
+            }, 
+            {
+                rel: 'stylesheet',
+                href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
+            }, 
         ],
     },
     //buildModules: ['@nuxtjs/eslint-module'],

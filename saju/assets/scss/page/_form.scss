@@ -1,13 +1,29 @@
 .input-form,
 .result {
     width: 320px;
-    height: 390px;
+    height: 420px;
     background-color: #fff;
     padding: 40px;
-    p{
-        font-size:25px;
-        margin-bottom:12px;
+    border-radius: 18px;
+
+    p {
+        font-size: 25px;
+        margin-bottom: 12px;
+
+        button {
+            margin-top: 0px;
+            height: 60px;
+            border-radius: 0px;
+            background-color: #f4f2f0;
+            color: #7b7b7b;
+        }
+
+        button.active {
+            color: #fff;
+            background-color: #6bd4ff;
+        }
     }
+
     ul {
         li {
             padding: 12px 0px 12px 0px;
@@ -37,14 +53,16 @@
 
                 input {
                     flex: 1;
-                    height: 45px;
+                    width: 50%;
+                    height: 60px;
                     background-color: #f4f2f0;
                     text-align: center;
                     font-size: 15px;
                 }
 
                 input::placeholder {
-                    color: #333;
+                    color: #7b7b7b;
+                    font-size: 18px;
                 }
             }
 
@@ -53,8 +71,10 @@
                 display: flex;
 
                 input {
-                    color: #277eeb;
-                    font-size: 15px;
+                    color: #363636;
+                    font-size: 23px;
+                    letter-spacing: 0.5px;
+                    ;
                     flex: 1;
                     min-width: 0;
                     // margin: 0px 10px 0px 10px;
@@ -71,10 +91,15 @@
     button {
         width: 100%;
         height: 60px;
-        border-radius: 40px;
+        flex: 1;
         margin-top: 45px;
-        background-color: #67abff;
+        border-radius: 40px;
+        background-color: #cbcbcb;
         color: #fff;
         font-size: 20px;
+    }
+
+    button.active {
+        background-color: #ff78c7;
     }
 }

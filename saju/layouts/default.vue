@@ -8,8 +8,9 @@
 </script>
 
 <style lang="scss">
-div#wrap{
-    background-color:#67abff;
+div#wrap{ 
+    
+    background-image: linear-gradient(to right, #00b09b, #41bff7);
     display: flex;
   justify-content: center;
   align-items: center;
