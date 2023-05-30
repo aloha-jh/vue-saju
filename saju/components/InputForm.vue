@@ -38,8 +38,8 @@ export default{
   data(){
     return{
       gender:true,  
-      userbirth:'19930920',
-      usertime:'1305',
+      userbirth:'',
+      usertime:'',
       birthCheck:false,
       birthHolderTxt:'19930101',
       timeHolderTxt:'1420'
