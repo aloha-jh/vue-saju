@@ -8,13 +8,15 @@ const dayTopTypes ={
     4:['임자','계축','갑인','을묘','병진','정사','무오','기미','경신','신유','임술','계해','갑자'],
 }
 
+// const time = '1305'; 
+// this.timeList = getSiju(body.lunIljin[0],time);
 
 
-export function getSiju(txt,time) {
-    const txtNum = dayTop[txt]; 
-    const hours = parseInt(time.split(":")[0]); //13
-    const minutes = parseInt(time.split(':')[1]); //5    
-   
+export function getSiju(txt,time) { 
+    const txtNum = dayTop[txt];    
+    const hours = parseInt(String(time).slice(0, 2)); //13
+    const minutes = parseInt(String(time).slice(2, 4) ); //5    
+
     let totalMinutes = hours * 60 + minutes;  
 
     const ranges = [

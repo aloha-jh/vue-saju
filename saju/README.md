@@ -1,29 +1,25 @@
 #### Saju
 
-### 사주
+### 운정원
 
----
+--- 
+사주 web application
+
+- 생년월일(시) 입력시 사주8글자 확인 (open api 사용하여 로딩시간이 있을 수 있습니다.)
+
 
 ### 설치
 
 1. npm i 로 관련 패키지 설치
-2. back-end 폴더로 이동후 npm i 로 관련 패키지 설치 후 다시 루트 디렉토리에서 실행
 
 ### 실행
 
 개발모드 실행
-(nuxt 와 json-server 동시 실행)
 
 ```
 npm run dev
 ```
 
-개발모드 실행
-(json-server 제외)
-
-```
-npm run serve
-```
 
 빌드
 
@@ -37,16 +33,16 @@ npm run build
 npm run start
 ```
 
-jest unit test 실행
+배포
+```
+npm run generate
+```
+
+(기타-)
 
 ```
-npm run test
-```
+npm run deploy
 
-ESLint 실행
-
-```
-npm run lint
 ```
 
 ### 폴더 구조
@@ -72,20 +68,6 @@ npm run lint
 
 ### 패키지 설명
 
--   npm-run-all
-
-    -   npm script 여러가지 명령어를 조합해서, 한 명령어로 실행 가능
-    -   npm run dev : parallel 옵션을 사용해 json-server, nuxt를 병렬로 실행
-
-<!-- -   swiper , vue-awesome-swiper 패키지 추가되었습니다.
-
-    -   slide banner 사용시 필요한 플러그인 입니다
-    -   관련 에러가 뜰경우 설치 바랍니다. -->
-
--   jest
-
-    -   javascript unit test 라이브러리 설치됨
-    -   관련 의존성 패키지들 설치 (babel-jest, babel-preset-env, jest-vue-preprocesser)
 
 -   eslint / prettier
 
