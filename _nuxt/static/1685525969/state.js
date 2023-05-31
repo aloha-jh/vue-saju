@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fvue-saju\u002F_nuxt\u002Fstatic\u002F1685525969",layout:"default",error:a,state:{user:a,isLoading:b,usertime:"",storage:{}},serverRendered:b,routePath:"\u002F",config:{_app:{basePath:"\u002Fvue-saju\u002F",assetsPath:"\u002Fvue-saju\u002F_nuxt\u002F",cdnURL:a}}}}(null,true));
