@@ -1,7 +1,7 @@
 div#wrap {
     width: 100%;
-    background-image: linear-gradient(to right, #00b09b, #41bff7);
-    // background-color: #eee6d2;
+    // background-image: linear-gradient(to right, #00b09b, #41bff7);
+    background-color: #eee;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,12 @@ div#wrap {
 }
 
 h1 {
+
+    font-size: 72px;
+    background: linear-gradient(to right, #00b09b, #41bff7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
     width: 100%;
     font-size: 50px;
     margin-bottom: 30px;
@@ -67,6 +73,7 @@ i.fas.fa-spinner.fa-spin {
                 justify-content: space-between;
 
                 span {
+
 
                     text-align: center;
                 }
@@ -173,7 +180,7 @@ i.fas.fa-spinner.fa-spin {
 
             div {
                 width: 100%;
-                text-align: center;
+
             }
 
             .input-form,
@@ -183,9 +190,7 @@ i.fas.fa-spinner.fa-spin {
                 padding: 20px;
                 padding-bottom: 60px;
 
-                ul {
-                    margin: 0px 30px;
-                }
+                ul {}
             }
 
             .input-form .btn-submit {
