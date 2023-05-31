@@ -33,6 +33,8 @@
 
 <script>
 import { mapActions, mapMutations } from 'vuex';
+import { inValidTime } from '../utils/validation';
+import { inValidDate } from '../utils/validation';
 
 export default{
   data(){
@@ -69,13 +71,13 @@ export default{
     ...mapMutations(['SET_USER_TIME']),
     async submit(){
       if( (this.usertime.length >= 1 && this.usertime.length <=3) 
-      || !this.inValidTime(this.usertime) ){
+      || !inValidTime(this.usertime) ){
         console.log('wrong')
         this.usertime='';
         this.timeHolderTxt='잘못된 시간형식';
         return;
       } 
-      if( this.inValidDate( this.userbirth )){
+      if( inValidDate( this.userbirth )){
         const data = {
           year: this.userbirth.slice(0, 4),
           month: this.userbirth.slice(4, 6),
@@ -99,26 +101,8 @@ export default{
     }, 
     timeNo(){
       this.usertime='';
-    },     
-    inValidDate( userbirth ){
-      const year = userbirth.slice(0, 4);
-      const month = userbirth.slice(4, 6);
-      const day = userbirth.slice(6, 8);
-
-      const date = new Date(year, month - 1, day);
-      return (
-        date.getFullYear() === Number(year) &&
-        date.getMonth() === Number(month) - 1 &&
-        date.getDate() === Number(day)
-      );
-    },
-    inValidTime(usertime){
-        const hours = usertime.slice(0, 2);
-        const minutes = usertime.slice(2, 4);        
-        const isValidHours = hours >= 0 && hours < 24;
-        const isValidMinutes = minutes >= 0 && minutes < 60;
-        return isValidHours && isValidMinutes;       
-    }
+    }, 
+    
   } 
 }
 </script>
