@@ -5,7 +5,7 @@
       <div class="result user-saju" v-if="user!=null">
           <h3>{{ user.lunYear }}년 {{user.solMonth}}월 {{user.solDay}}일생 </h3>  
           <result-saju></result-saju>
-          <!-- <result-five-attr></result-five-attr> -->
+          <result-five-attr></result-five-attr>
       </div>
     </template>
   </div>
