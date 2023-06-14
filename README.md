@@ -7,6 +7,7 @@
 
 - 생년월일(시) 입력시 사주8글자 확인 (open api 사용하여 로딩시간이 있을 수 있습니다.)
 
+[https://aloha-jh.github.io/vue-saju/](https://aloha-jh.github.io/vue-saju/)
 
 ### 설치
 
